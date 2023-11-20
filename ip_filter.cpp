@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include "IpAdress.h"
+#include <algorithm>
 
 using namespace std;
  
