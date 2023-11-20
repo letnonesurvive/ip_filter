@@ -5,13 +5,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(ip_filter VERSION ${PROJECT_VESRION})
 
-#option(WITH_BOOST_TEST "Whether to build Boost test" ON)
-
-#configure_file(version.h.in version.h)
-
 add_executable(ip_filter ip_filter.cpp IpAdress.cpp IpAdress.h)
-
-#add_library(helloworld lib.cpp)
 
 set_target_properties(ip_filter ip_filter PROPERTIES
     CXX_STANDARD 14
@@ -22,10 +16,6 @@ target_include_directories(ip_filter
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
 
-# target_link_libraries(helloworld_cli PRIVATE
-#     helloworld
-# )
-
 if (MSVC)
     target_compile_options(ip_filter PRIVATE
         /W4
@@ -33,11 +23,6 @@ if (MSVC)
     target_compile_options(ip_filter PRIVATE
         /W4
     )
-    # if(WITH_BOOST_TEST)
-    #     target_compile_options(test_version PRIVATE
-    #         /W4
-    #     )
-    # endif()
 else ()
     target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic -Werror
@@ -45,11 +30,6 @@ else ()
     target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
-    # if(WITH_BOOST_TEST)
-    #     target_compile_options(test_version PRIVATE
-    #         -Wall -Wextra -pedantic -Werror
-    #     )
-    # endif()
 endif()
 
 install(TARGETS ip_filter RUNTIME DESTINATION bin)
@@ -58,10 +38,5 @@ set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
 set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
 set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
-set(CPACK_PACKAGE_CONTACT example@example.com)
+set(CPACK_PACKAGE_CONTACT hippiman1221@gmail.com)
 include(CPack)
-
-# if(WITH_BOOST_TEST)
-#     enable_testing()
-#     add_test(test_version test_version)
-# endif()
