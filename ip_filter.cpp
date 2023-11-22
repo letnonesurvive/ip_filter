@@ -42,8 +42,8 @@ int main (int argc, char *argv[])
     }
 
     cout << endl;
-    cout << "2. Followed by a list of addresses, the first byte of which is 1. The sorting order does not change.
-                One line - one address. The lists are not separated by anything." << endl;
+    cout << "2. Followed by a list of addresses, the first byte of which is 1. The sorting order does not change."
+                "One line - one address. The lists are not separated by anything." << endl;
     IpAdress aVal2 ("2.0.0.0\t");
     for (auto& anIp : anIpAdresses) {
         if (anIp < aVal2) {
@@ -52,8 +52,8 @@ int main (int argc, char *argv[])
     }
 
     cout << endl;
-    cout << "3. The list of addresses immediately continues, the first byte of which is 46, and the second is 70. 
-                The sorting order does not change. One line - one address. The lists are not separated by anything" << endl;
+    cout << "3. The list of addresses immediately continues, the first byte of which is 46, and the second is 70." 
+                "The sorting order does not change. One line - one address. The lists are not separated by anything" << endl;
     IpAdress aVal3 ("46.70.0.0\t");
     IpAdress aVal4 ("47.0.0.0\t");
     IpAdress aVal5 ("46.71.0.0\t");
@@ -65,8 +65,8 @@ int main (int argc, char *argv[])
     }
 
     cout << endl;
-    cout << "4. The list of addresses continues immediately, any byte of which is 46. The sorting order does not
-                change. One line - one address. The lists are not separated by anything." << endl;
+    cout << "4. The list of addresses continues immediately, any byte of which is 46. The sorting order does not"
+                "change. One line - one address. The lists are not separated by anything." << endl;
     IpAdress aVal6 ("46.0.0.0\t");
     for (auto& anIp : anIpAdresses) {
         if (anIp >= aVal6 && anIp < aVal4) {
